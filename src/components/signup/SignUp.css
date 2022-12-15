@@ -1,0 +1,148 @@
+
+.signup{
+    width: 50vw;
+    height: 70vh;
+    border: 1px solid rgb(187, 186, 186);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    left: 425px;
+    top: 100px;
+}
+
+.signup1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+}
+.google{
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: right;
+    align-content:flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    line-height: 0.5px;
+}
+
+.google h2{
+    font-weight: lighter;
+    position: relative;
+    font-weight: lighter  ;
+    bottom : 30px;
+    left : 10px;
+    font-size: 23px;
+}
+.text{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    padding: 20px;
+    left : 10px;
+    position: relative;
+    bottom:50px;
+    
+}
+#Firstname,
+#Lastname{
+    width: 140px;
+    height: 10px;
+  
+}
+.user{
+    
+    width:700px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    position:relative;
+    top: 20px;
+    line-height: 0.5px;
+}
+#Username{
+   width:315px;
+   height: 10px;
+}
+.user p{
+    line-height: 9px;
+    font-size: 12px;
+    
+    
+}
+.user h4{
+    color: blue;
+    font-size: 14px;
+    font-weight:30px;
+    position: relative;
+    left:5px;
+    bottom: 10px;
+}
+.password{
+    width:500px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    top: 10px;
+}
+#Password,
+#Confirm{
+    width: 140px;
+    height: 8px;
+}
+.password p{
+    line-height: 10px;
+    font-size: 12px;
+    position: relative;
+    bottom : 5px;
+}
+
+
+
+.button{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    top: -70px;
+    left:20px;
+    font-size: 15px;
+}
+
+.pic{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    /* border: 1px solid red; */
+}
+
+.pic img{
+    width: 250px;
+    height: 230px;
+    /* border: 1px solid red; */
+}
+
+.pic p{
+    width:250px;
+    font-size: 16px;
+    line-height: 20px;
+    /* border: 1px solid red; */
+}
