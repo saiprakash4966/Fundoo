@@ -1,0 +1,55 @@
+ .note2{
+    width: 37vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(234, 234, 234);
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px #888888;
+    border-radius: 10px;
+    position: relative;
+    bottom: 20px;
+    left: 600px;
+}
+.notes1{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+   
+}
+.note4{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.icons1{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    right: 120px;
+    top: 25px;
+}
+.note5{
+    width: 20%;
+    display: block;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    top: -5px;
+    left: 245px;
+    
+} 

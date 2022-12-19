@@ -1,0 +1,25 @@
+.note1{
+    width: 37vw;
+    height: 3vh;
+    top: 30px;
+    left: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(234, 234, 234);
+    padding: 10px;
+    box-shadow: 2px 2px 2px 1px #888888;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.icons{
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+}

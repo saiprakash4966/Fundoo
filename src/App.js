@@ -3,6 +3,10 @@ import './App.css';
 import SignIn from './components/signIn/SignIn';
 import SignUp from './components/signup/SignUp';
 import { Component } from 'react';
+import Header from './components/header/Header';
+import TakeNote1 from './components/takeNote1/TakeNote1';
+import TakeNote2 from './components/takeNote2/TakeNote2';
+import TakeNote3 from './components/takeNote3/TakeNote3';
 
 
 
@@ -23,8 +27,12 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <Header/>
       {/* <SignIn/> */}
-      <SignUp/> 
+      {/* <SignUp/>  */}
+      <TakeNote1/>
+      <TakeNote2/>
+      <TakeNote3/>
       
     </div>
   );
