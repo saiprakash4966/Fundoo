@@ -31,9 +31,9 @@ function App() {
       {/* <Header/> */}
       {/* <SignIn/> */}
       {/* <SignUp/>  */}
-      {/* <TakeNote1/>
-      <TakeNote2/>
-      <TakeNote3/> */}
+       {/* <TakeNote1/>
+       <TakeNote2/> */}
+      {/* <TakeNote3/>   */}
       <Dashboard/>
       
     </div>

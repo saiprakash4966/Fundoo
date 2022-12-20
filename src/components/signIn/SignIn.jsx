@@ -52,7 +52,7 @@ function SignIn() {
 
         if(emailText === true && passwordText === true)
         {
-            loginApi(signInObj).then((response) =>{console.log(response)}).catch((error) => {console.log(error)})
+            loginApi(signInObj).then((response) =>{console.log(response);localStorage.setItem("token" ,response.data.id)}).catch((error) => {console.log(error)})
         }
     }
     return (

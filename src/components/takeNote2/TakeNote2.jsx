@@ -14,10 +14,37 @@ import Button from '@mui/material/Button';
 import { grey } from '@mui/material/colors';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import { useState } from 'react';
+import { createNoteApi } from '../../services/dataService';
 
 
 function TakeNote2() 
 {
+    const [noteobj,setNoteobj] = useState({title : '' , description : ''})
+
+    const takeTitle = (e) =>
+    {
+     setNoteobj(prevState => ({...prevState,title : e.target.value}))
+    }
+
+    const takeDescription = (e) =>
+    {
+        setNoteobj(prevState => ({...prevState,description : e.target.value}))
+
+    }
+
+    const submit = () =>
+    {
+        console.log(noteobj)
+        createNoteApi(noteobj)
+        .then(res =>{
+            console.log(res)
+        })
+        .catch(error =>
+            {
+                console.log(error)
+            })
+    }
 
     
     return (
@@ -25,7 +52,7 @@ function TakeNote2()
         <Box className='notes1'>
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
-                onChange='Title' 
+                onChange={takeTitle} 
                 placeholder="Title"
                 inputProps={{ 'aria-label': 'Take a note....' }}
             />
@@ -35,7 +62,7 @@ function TakeNote2()
         <InputBase
             maxRows
             sx={{ ml: 1, flex: 1 }}
-            onChange='Title'
+            onChange={takeDescription}
             placeholder="Take a note...."
             inputProps={{ 'aria-label': 'Take a note....' }}
 
@@ -56,7 +83,7 @@ function TakeNote2()
             <RedoOutlinedIcon sx={{ fontSize: 20 }} />
         </Box>
         <Box className='note5'>
-        <Button  variant="text" sx={{color: grey[900]}} onClick=''>Close</Button>
+        <Button  variant="text" sx={{color: grey[900]}} onClick={submit}>Close</Button>
         </Box>
         
     </Paper>

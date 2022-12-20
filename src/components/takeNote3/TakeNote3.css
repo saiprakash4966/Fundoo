@@ -14,7 +14,7 @@
     margin-right: 10px;
     margin-bottom: 10px;
     position: relative;
-    top: -10px;
+    top: 70px;
     left: 400px;
 
 } 
@@ -27,25 +27,22 @@
     
 
 }
-.input{
-    
+.NoteThree{
     width: 83%;
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    
+
 }
-p{
+.NoteThree p{
     position: relative;
+    bottom : 20px;
     
 }
-h5{
-    color: black;
-   
-}
-.NoteThree{
+
+.NoteFour{
     width: 15%;
     position: relative;
     top: 0px;
@@ -58,45 +55,3 @@ h5{
     align-items: flex-start;
    
 }
-/* .Childnote1{
-    width:39vw;
-    height:26vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: space-between;
-    align-items: center;
-    border: 2px solid rgb(234, 234, 234);
-} */
-/* .Childnote2{
-    width:100%;
-    height: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: space-between;
-    align-items: center;
-} */
-
-/* .Childnote4{
-    width:100%;
-    height: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: space-between;
-    align-items: center;
-} */
-/* .childicon{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: space-between;
-    align-items: center;
-
-}  */
