@@ -12,13 +12,14 @@ import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import Button from '@mui/material/Button';
 import { grey } from '@mui/material/colors';
-import { color } from "@mui/system";
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 
 function TakeNote2() 
 {
+
+    
     return (
         <Paper className='note2'>
         <Box className='notes1'>

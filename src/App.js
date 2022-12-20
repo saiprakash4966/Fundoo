@@ -7,6 +7,7 @@ import Header from './components/header/Header';
 import TakeNote1 from './components/takeNote1/TakeNote1';
 import TakeNote2 from './components/takeNote2/TakeNote2';
 import TakeNote3 from './components/takeNote3/TakeNote3';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 
 
@@ -27,12 +28,13 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Header/>
+      {/* <Header/> */}
       {/* <SignIn/> */}
       {/* <SignUp/>  */}
-      <TakeNote1/>
+      {/* <TakeNote1/>
       <TakeNote2/>
-      <TakeNote3/>
+      <TakeNote3/> */}
+      <Dashboard/>
       
     </div>
   );

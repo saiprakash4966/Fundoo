@@ -8,9 +8,15 @@ import { grey } from '@mui/material/colors';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
-function TakeNote1() {
+function TakeNote1(props) {
+
+    const submit = () =>
+    {
+      props.listenToTakeNoteOne()
+    }
+
     return (
-        <Paper className='note1' onClick=''>
+        <Paper className='note1' onClick={submit}>
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Take a note..."
