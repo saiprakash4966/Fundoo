@@ -27,6 +27,7 @@
     
 
 }
+
 .NoteThree{
     width: 83%;
     height: 70%;
@@ -57,7 +58,61 @@
     justify-content: space-between;
     align-content: space-between;
     top: 90px;
-    
-
    
 }
+
+.Childnoteone{
+
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+
+}
+.Childnotetwo
+{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.Childnotethree
+{
+    left : -15px;
+    position: relative;
+    bottom : 20px;
+
+}
+
+
+.Childnotefour{
+    width: 15%;
+    position: relative;
+    bottom: 80px;
+    left : 380px;
+}
+
+.Childicon{
+    width: 180%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: -250px;
+    position: relative;
+    justify-content: space-between;
+    align-content: space-between;
+    top: 90px;
+   
+}
+
+

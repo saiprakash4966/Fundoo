@@ -16,6 +16,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import ColorPopper from '../ColorPopper/ColorPopper';
+import { createNoteApi } from '../../services/dataService';
 
 
 function TakeNote2(props) 
@@ -34,11 +35,20 @@ function TakeNote2(props)
 
     }
 
+   
 
-
-    const submit = () =>
-    {
-        props.listenToTakeNoteTwo()
+    const close = () =>
+    {   
+         props.listenToTakeNoteTwo()
+        createNoteApi(noteobj)
+        .then(res =>{
+            console.log(res)
+        })
+        .catch(error =>
+            {
+                console.log(error)
+            })
+    
        
     }
     const listenToColor = (colour) =>{
@@ -87,7 +97,7 @@ function TakeNote2(props)
             <RedoOutlinedIcon sx={{ fontSize: 20 }} />
         </Box>
         <Box className='note5'>
-        <Button  variant="text" sx={{color: grey[900]}} onClick={submit}>Close</Button>
+        <Button  variant="text" sx={{color: grey[900]}} onClick={close}>Close</Button>
         </Box>
         
     </Paper>
