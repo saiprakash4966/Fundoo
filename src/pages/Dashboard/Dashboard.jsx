@@ -15,7 +15,11 @@ function Dashboard(props) {
     {
         setToggleNote(true)
     }
-    useEffect (() => {
+
+    const listenToTakeNoteTwo = () => {
+        setToggleNote(false)
+    }
+    const getNote = () =>{
         getNoteListApi()
         .then(res =>
             {
@@ -27,6 +31,11 @@ function Dashboard(props) {
                     console.log(error)
                 })
 
+
+    }
+    useEffect (() => {
+        getNote()
+       
     },[])
     console.log(noteList,'fetching array')
 
@@ -34,11 +43,11 @@ function Dashboard(props) {
         <div>
             <Header/>
             {
-                toggleNote ? <TakeNote2/> : <TakeNote1  listenToTakeNoteOne = {listenToTakeNoteOne}/>  
+                toggleNote ? <TakeNote2 listenToTakeNoteTwo ={listenToTakeNoteTwo}/> : <TakeNote1  listenToTakeNoteOne = {listenToTakeNoteOne}/>  
             }
-            <div style={{width : '70vw' , height : '100vh' ,display : 'flex',flexWrap : 'wrap'}}>
+            <div style={{width : '70vw' , height : 'auto' ,display : 'flex',flexWrap : 'wrap',}}>
             {
-                noteList.map((note) =>(<TakeNote3  note = {note}/>))
+                noteList.map((note) =>(<TakeNote3  getNote={getNote} note = {note}/>))
             }
             </div>
            

@@ -15,12 +15,13 @@ import { grey } from '@mui/material/colors';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
-import { createNoteApi } from '../../services/dataService';
+import ColorPopper from '../ColorPopper/ColorPopper';
 
 
-function TakeNote2() 
+function TakeNote2(props) 
 {
-    const [noteobj,setNoteobj] = useState({title : '' , description : ''})
+    const [noteobj,setNoteobj] = useState({title : '' , description : '',color : '',isArchived : false})
+
 
     const takeTitle = (e) =>
     {
@@ -33,22 +34,27 @@ function TakeNote2()
 
     }
 
+
+
     const submit = () =>
     {
-        console.log(noteobj)
-        createNoteApi(noteobj)
-        .then(res =>{
-            console.log(res)
-        })
-        .catch(error =>
-            {
-                console.log(error)
-            })
+        props.listenToTakeNoteTwo()
+       
+    }
+    const listenToColor = (colour) =>{
+        setNoteobj(prevState => ({...prevState,color : colour }))
+
+
     }
 
+    const archiveNote = () =>
+    {
+        setNoteobj(prevState => ({...prevState,isArchived : true}))
+
+    }
     
     return (
-        <Paper className='note2'>
+        <Paper className='note2' style={{ backgroundColor : noteobj.color}}>
         <Box className='notes1'>
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
@@ -72,12 +78,10 @@ function TakeNote2()
         <Box className='icons1' >
             <AddAlertOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
             <PersonAddAlt1OutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  />
-            <ColorLensOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
-            {/* <Box>
-               
-            </Box> */}
+            {/* <ColorLensOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} /> */}
+            <ColorPopper  listenToColor = {listenToColor}  action="create"/>
             <ImageOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
-            <ArchiveOutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  onClick=''/>
+            <ArchiveOutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  onClick={archiveNote}/>
             <MoreVertOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
             <UndoOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
             <RedoOutlinedIcon sx={{ fontSize: 20 }} />

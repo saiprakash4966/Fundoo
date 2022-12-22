@@ -98,7 +98,7 @@ function SignUp() {
                         
                 if(firstNameText === true && lastNameText === true &&emailText === true && passwordText === true && confirmText === true)
                 {
-                    signupApi(signupObj).then((response) =>{console.log(response) ;localStorage.setItem('token',response.data.id)}).catch((error) => {console.log(error)})
+                    signupApi(signupObj).then((response) =>{console.log(response) }).catch((error) => {console.log(error)})
                 }
                
 

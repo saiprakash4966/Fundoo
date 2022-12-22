@@ -18,3 +18,21 @@ export const getNoteListApi = () =>
     let response = axios.get('http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList',headerConfig)
     return response
 }
+
+export const updateColorApi = (noteobj) =>
+{
+    let response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/notes/changesColorNotes',noteobj,headerConfig)
+    return response
+}
+
+export const updateArchiveApi =(noteobj) =>
+{
+    let response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/notes/archiveNotes',noteobj,headerConfig)
+    return response
+}
+
+export const deletedNotesApi = (noteObj) => {
+    let responce = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/notes/trashNotes', noteObj, headerConfig)
+
+    return responce
+}

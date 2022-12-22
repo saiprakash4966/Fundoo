@@ -15,16 +15,58 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import { color } from '@mui/system';
+import ColorPopper from '../ColorPopper/ColorPopper';
+import { deletedNotesApi, updateArchiveApi } from '../../services/dataService';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+
 
 
 function TakeNote3(props) {
 
     console.log(props.note)
 
+    const colorUpdate = ()=>
+    {
+        props.getNote()
+
+    }
+
+    const updateArchive = (id) =>
+    {
+        let input = {noteIdList : [id], isArchived : true}
+        updateArchiveApi(input).then ( res =>
+            {
+                console.log(res)
+            }) 
+            .catch(error =>
+                {
+                    console.log(error)
+                })
+
+    }
+    const trash = (id) => {
+        
+        let trash = {
+            noteIdList: [id], isDeleted: true
+        }
+        
+        deletedNotesApi(trash).then(
+            response => {
+                console.log(response)
+            }
+        ).catch(
+            error => {
+                console.log(error)
+            }
+        )
+    }
+
+
+
     return (
-        <Paper className='NoteOne' style={{ backgroundColor: 'color' }}>
-            <Box className='NoteTwo'>
-                <Box className='NoteThree' onClick='' >
+        <Paper className='NoteOne' style={{ backgroundColor: props.note.color }}>
+            <Box className='NoteTwo'>  
+                <Box className='NoteThree'>
                 <p>{props.note.title}</p>
                     <p>{props.note.description}</p> 
                     
@@ -36,9 +78,12 @@ function TakeNote3(props) {
             <Box className='iconOne'>
             <AddAlertOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
             <PersonAddAlt1OutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  />
-            <ColorLensOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
-            <ImageOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
-            <ArchiveOutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  onClick=''/>
+            {/* <ColorLensOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} /> */}
+            <ColorPopper action="update" id={props.note.id} colorUpdate = {colorUpdate}/>
+
+            {/* <ImageOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} /> */}
+            <DeleteForeverOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} onClick={() => trash(props.note.id)} />
+            <ArchiveOutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  onClick={ () => updateArchive(props.note.id)} />
             <MoreVertOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
            
             </Box>
