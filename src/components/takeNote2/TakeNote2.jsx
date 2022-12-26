@@ -64,7 +64,7 @@ function TakeNote2(props)
     }
     
     return (
-        <Paper className='note2' style={{ backgroundColor : noteobj.color}}>
+        <Paper className='note2'  elevation={4} style={{ backgroundColor : noteobj.color}}>
         <Box className='notes1'>
             <InputBase
                 sx={{ ml: 1, flex: 1 }}

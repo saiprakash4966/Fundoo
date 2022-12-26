@@ -11,14 +11,19 @@ import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
 import { yellow } from '@mui/material/colors'; 
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {connect} from 'react-redux'
 
-function Header() {
+function Header(props) {
+    const menuClick = () =>
+    {
+        props.listenToHeader()
+    }
     return (
-        <div className="header">
-        <MenuOutlinedIcon sx={{ fontSize: 25 }} onClick=''/>
+        <div className="header" >
+        <MenuOutlinedIcon sx={{ fontSize: 25 }} onClick={menuClick}/>
         <div className="keep">
             <DescriptionIcon sx={{ color: yellow[500], fontSize: 45 }} />
-            <h1>Keep</h1>
+            <h1>{props.label}</h1>
         </div>
         <div className="search">
             <IconButton type="button" sx={{ p: '10px' }} aria-label="Search">
@@ -43,4 +48,12 @@ function Header() {
     );
 }
 
-export default Header;
+const mapStateToProps = (state)=>{
+return {
+  label : state.drawerReducer.label
+}
+}
+
+
+
+export default connect( mapStateToProps)(Header)

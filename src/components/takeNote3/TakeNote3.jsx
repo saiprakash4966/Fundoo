@@ -145,8 +145,8 @@ function TakeNote3(props) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <Box className='Childnoteone' >
+                <Box sx={style} style={{ backgroundColor: props.note.color }}>
+                    <Box className='Childnoteone'  >
                         <Box className='Childnotetwo' >
                             <Box className='Childnotethree' >
                                 <InputBase onChange={takeTitle} defaultValue={inputValue.title} />
@@ -162,14 +162,19 @@ function TakeNote3(props) {
                         <Box className='Childicon'>
                             <AddAlertOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
                             <PersonAddAlt1OutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
-                            <ColorPopper />
-                            <ImageOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
-                            <ArchiveOutlinedIcon sx={{ fontSize: 20, color: grey[900] }}  />
+                            <ColorPopper action='update' colorUpdate={colorUpdate} id={props.note.id} />
+                            {/* <ImageOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} /> */}
+                            <DeleteForeverOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} onClick={() => trash(props.note.id)} />
+                            <ArchiveOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} onClick={() => updateArchive(props.note.id)} />
                             <MoreVertOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
                             <UndoOutlinedIcon sx={{ fontSize: 20, color: grey[900] }} />
                             <RedoOutlinedIcon sx={{ fontSize: 20 }} />
 
-                            <button onClick={save}>Close</button>
+                            
+                        </Box>
+
+                        <Box className='close'>
+                        <Button variant="text" sx={{ color: grey[900] }} onClick={save}>Close</Button>
                         </Box>
 
 
