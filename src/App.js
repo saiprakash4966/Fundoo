@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import PrimarySearchAppBar from './components/Header1/Header1';
 import { Provider } from 'react-redux';
 import store from './components/redux/store';
+import RouterOne from './components/router/router';
 
 
 
@@ -41,7 +42,8 @@ function App() {
       
       {/* <PrimarySearchAppBar/> */}
       <Provider store={store} >
-      <Dashboard/> 
+      {/* <Dashboard/>  */}
+      <RouterOne/>
       </Provider>
       
     </div>

@@ -16,7 +16,7 @@ function TakeNote1(props) {
     }
 
     return (
-        <Paper  className='note1' elevation={10}  onClick={submit}>
+        <Paper  className='note1' elevation={4}  onClick={submit}>
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Take a note..."

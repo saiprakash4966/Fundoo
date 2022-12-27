@@ -1,4 +1,4 @@
-import  React from 'react';
+import React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,8 +12,6 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import DescriptionIcon from '@mui/icons-material/Description';
 import { yellow } from '@mui/material/colors';
@@ -26,16 +24,16 @@ import { connect } from 'react-redux';
 
 
 const Search = styled('div')(({ theme }) => ({
-    
+
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     position: 'relative',
-    left  : '80px',
+    left: '80px',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.black, 0.15),
     '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.black, 0.25),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
@@ -58,17 +56,17 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
+    color: 'black',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
-       
+
         paddingLeft: `calc(1em + ${theme.spacing(5)})`,
         transition: theme.transitions.create('width'),
         width: '45vw',
         [theme.breakpoints.up('md')]: {
             width: '45vw',
         },
-        
+
     },
 }));
 
@@ -86,7 +84,7 @@ function PrimarySearchAppBar(props) {
     const handleMobileMenuClose = () => {
         setMobileMoreAnchorEl(null);
     };
-   
+
 
     const handleMenuClose = () => {
         setAnchorEl(null);
@@ -137,10 +135,10 @@ function PrimarySearchAppBar(props) {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-            
-                        <RefreshIcon />
-                    
+                <IconButton size="large" aria-label="show 4 new mails" >
+
+                    <RefreshIcon />
+
                 </IconButton>
                 <p>Refresh</p>
             </MenuItem>
@@ -148,10 +146,10 @@ function PrimarySearchAppBar(props) {
                 <IconButton
                     size="large"
                     aria-label="setting"
-                    color="inherit"
+
                 >
-                        <SettingsTwoToneIcon />
-                    
+                    <SettingsTwoToneIcon />
+
                 </IconButton>
                 <p>Setting</p>
             </MenuItem>
@@ -161,7 +159,7 @@ function PrimarySearchAppBar(props) {
                     aria-label="account of current user"
                     aria-controls="primary-search-account-menu"
                     aria-haspopup="true"
-                    color="inherit"
+
                 >
                     <AccountCircle />
                 </IconButton>
@@ -170,80 +168,81 @@ function PrimarySearchAppBar(props) {
         </Menu>
     );
 
-    const menuClick = () =>
-    {
+    const menuClick = () => {
         props.listenToHeader()
     }
 
     return (
         <Box sx={{ flexGrow: 1 }} >
-            <AppBar position="static">
+            <AppBar position="static" style={{ backgroundColor: 'white' }}>
                 <Toolbar>
                     <IconButton
                         size="large"
                         edge="start"
-                        color="inherit"
+
                         aria-label="open drawer"
                         sx={{ mr: 1 }}
                     >
-                        <MenuIcon  onClick={menuClick}/>
+                        <MenuIcon onClick={menuClick} />
                     </IconButton>
-                    <DescriptionIcon sx={{ color: yellow[500], fontSize: 60, padding: '10px'}}  />
-                    <Typography 
+                    <DescriptionIcon sx={{ color: yellow[500], fontSize: 60, padding: '10px' }} />
+                    <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
+                        sx={{ display: { xs: 'none', sm: 'block', color: 'black' } }}
                     >
                         {props.label}
-                        
+
                     </Typography>
                     <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
+                        <SearchIconWrapper >
+                            <SearchIcon sx={{ color: 'black' }} />
                         </SearchIconWrapper>
                         <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
+
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, position: 'relative', right: '50px' }}>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, position: 'relative', right: '50px', color: 'black' }}>
                         <IconButton size="large"
                             aria-label="refresh"
-                            color="inherit">
-                            < RefreshIcon />
+
+                        >
+                            < RefreshIcon sx={{ color: 'black' }} />
 
                         </IconButton>
                         <IconButton
                             size="large"
-                            color="inherit"
+
                         >
-                            <ViewStreamOutlinedIcon />
+                            <ViewStreamOutlinedIcon sx={{ color: 'black' }} />
                         </IconButton>
                         <IconButton
                             size="large"
                             edge="end"
                             aria-label="Setting"
-                            color="inherit"
+
                         >
-                            <SettingsTwoToneIcon />
+                            <SettingsTwoToneIcon sx={{ color: 'black' }} />
 
                         </IconButton>
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
                             size="large"
-                            color="inherit"
+
                         >
-                            <AppsRoundedIcon />
+                            <AppsRoundedIcon sx={{ color: 'black' }} />
 
                         </IconButton>
                         <IconButton
                             size="large"
-                            color="inherit"
+
                         >
-                            <AccountCircleIcon sx={{ fontSize: 30 }} />
+                            <AccountCircleIcon sx={{ fontSize: 30, color: 'black' }} />
                         </IconButton>
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -253,7 +252,7 @@ function PrimarySearchAppBar(props) {
                             aria-controls={mobileMenuId}
                             aria-haspopup="true"
                             onClick={handleMobileMenuOpen}
-                            color="inherit"
+
                         >
                             <MoreIcon />
                         </IconButton>
@@ -266,12 +265,13 @@ function PrimarySearchAppBar(props) {
     );
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
     return {
-      label : state.drawerReducer.label
+        label: state.drawerReducer.label
     }
-    }
-    
-    
-    
-    export default connect( mapStateToProps)(PrimarySearchAppBar)
+}
+
+
+
+export default connect(mapStateToProps)(PrimarySearchAppBar)
+

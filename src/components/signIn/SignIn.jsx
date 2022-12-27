@@ -3,6 +3,7 @@ import './SignIn.css';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { loginApi } from '../../services/userService';
+import { useNavigate } from 'react-router-dom';
 
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
@@ -27,6 +28,11 @@ function SignIn() {
         setsignInObj((prevState) =>({...prevState,password : event.target.value}))
         
     }
+    const navigate = useNavigate() 
+    const openSignUp=()=>{
+        navigate('/signup')   
+}
+
     const submit = () =>
     {
         console.log("submit",signInObj)
@@ -52,7 +58,10 @@ function SignIn() {
 
         if(emailText === true && passwordText === true)
         {
-            loginApi(signInObj).then((response) =>{console.log(response);localStorage.setItem("token" ,response.data.id)}).catch((error) => {console.log(error)})
+            loginApi(signInObj).then((response) =>{console.log(response);localStorage.setItem("token" ,response.data.id);
+          navigate('/dashboard')})
+
+            .catch((error) => {console.log(error)})
         }
     }
     return (
@@ -76,7 +85,7 @@ function SignIn() {
         <Button className='learn' >Learn more</Button>
         </div>
         <div className="Button1">
-                <Button variant="text" onClick=''>Create account</Button>
+                <Button variant="text" onClick={openSignUp}>Create account</Button>
                 <Button variant="contained" onClick={submit}>Next</Button>
             </div>
 

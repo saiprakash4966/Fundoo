@@ -118,9 +118,18 @@ function TakeNote3(props) {
             <Box className='NoteTwo'>
                 <Box className='NoteThree' onClick={() => handleOpen(props.note)}>
                     <p>{props.note.title}</p>
-                    <p>{props.note.description}</p>
+                    
 
                 </Box>
+               
+                <Box className='NoteDesc' onClick={() => handleOpen(props.note)}>
+                    <p>{props.note.description}</p>
+                    
+
+                </Box>
+                    
+
+                
                 <Box className='NoteFour'>
                     <PushPinOutlinedIcon sx={{ fontSize: 25, color: grey[900] }} />
                 </Box>

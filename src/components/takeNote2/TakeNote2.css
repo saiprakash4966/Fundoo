@@ -10,10 +10,7 @@
     padding: 10px;
     box-shadow: 2px 2px 2px 1px #888888;
     border-radius: 10px;
-    position: relative;
-    top: 0px;
-    left: 600px;
-}
+    margin-left: 30%;}
 .notes1{
     width: 100%;
     display: flex;
@@ -22,6 +19,7 @@
     justify-content: space-between;
     align-content: space-between;
     align-items: center;
+    
     
     
    

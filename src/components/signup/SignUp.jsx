@@ -5,6 +5,7 @@ import {Button } from '@mui/material';
 import {Checkbox} from '@mui/material';
 import {FormControlLabel }from '@mui/material';
 import { signupApi } from '../../services/userService';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -43,6 +44,11 @@ function SignUp() {
         console.log(signupObj)
         setsignupObj((prevstate) => ({ ...prevstate, password: event.target.value }))
         
+    }
+    const navigate = useNavigate() 
+    const openSignIn = () =>
+    {
+        navigate('/')
     }
     const submit = () => {
         console.log(signupObj, "submit")
@@ -98,7 +104,9 @@ function SignUp() {
                         
                 if(firstNameText === true && lastNameText === true &&emailText === true && passwordText === true && confirmText === true)
                 {
-                    signupApi(signupObj).then((response) =>{console.log(response) }).catch((error) => {console.log(error)})
+                    signupApi(signupObj).then((response) =>{console.log(response) })
+                    navigate('/')
+                    .catch((error) => {console.log(error)})
                 }
                
 
@@ -128,7 +136,7 @@ function SignUp() {
                     </div>
                 </div>
                 <div className="button">
-                    <Button variant="text">Sign in instead</Button>
+                    <Button variant="text" onClick={openSignIn}>Sign in instead</Button>
                     <Button variant="contained" onClick={submit}>Next</Button>
                 </div>
 
